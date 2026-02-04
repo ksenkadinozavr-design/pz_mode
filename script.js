@@ -46,7 +46,7 @@ const parallaxLayers = document.querySelectorAll(".hero-layer");
 const handleScroll = () => {
   const scrollTop = window.scrollY;
   parallaxLayers.forEach((layer, index) => {
-    const depth = (index + 1) * 0.15;
+    const depth = Number(layer.dataset.depth) || (index + 1) * 0.12;
     layer.style.transform = `translateY(${scrollTop * depth}px)`;
   });
 };

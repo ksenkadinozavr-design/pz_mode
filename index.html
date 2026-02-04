@@ -29,12 +29,18 @@
 
   <main>
     <section class="hero" id="top">
-      <div class="hero-layer hero-layer--stars"></div>
-      <div class="hero-layer hero-layer--nebula"></div>
-      <div class="hero-layer hero-layer--mist"></div>
-      <div class="hero-layer hero-layer--cracks"></div>
-      <div class="hero-layer hero-layer--horizon"></div>
-      <div class="hero-layer hero-layer--spikes"></div>
+      <div class="hero-layer hero-layer--stars" data-depth="0.04"></div>
+      <div class="hero-layer hero-layer--nebula" data-depth="0.08"></div>
+      <div class="hero-layer hero-layer--mist" data-depth="0.12"></div>
+      <div class="hero-layer hero-layer--cracks" data-depth="0.18"></div>
+      <div class="hero-layer hero-layer--horizon" data-depth="0.23"></div>
+      <div class="hero-layer hero-layer--spikes" data-depth="0.3"></div>
+      <div class="hero-layer hero-layer--embers" data-depth="0.34"></div>
+      <div class="hero-layer hero-layer--aurora" data-depth="0.38"></div>
+      <div class="hero-layer hero-layer--shards" data-depth="0.42"></div>
+      <div class="hero-layer hero-layer--foreground" data-depth="0.48"></div>
+      <div class="hero-orb hero-orb--left"></div>
+      <div class="hero-orb hero-orb--right"></div>
       <div class="hero-content">
         <p class="eyebrow">Gothic / Cyberpunk Artifacts</p>
         <h1>XENOVENT</h1>
@@ -51,7 +57,10 @@
       <div class="hero-glow"></div>
     </section>
 
-    <section class="story" id="story">
+    <section class="story layered" id="story">
+      <div class="section-bg section-bg--veil"></div>
+      <div class="section-bg section-bg--mist"></div>
+      <div class="section-bg section-bg--shards"></div>
       <div class="section-title">
         <h2>Философия бренда</h2>
         <p>
@@ -79,6 +88,7 @@
     <section class="catalog layered" id="catalog">
       <div class="section-bg section-bg--veil"></div>
       <div class="section-bg section-bg--runes"></div>
+      <div class="section-bg section-bg--grid"></div>
       <div class="section-title">
         <h2>Каталог</h2>
         <p>Три направления XENOVENT — выбирайте свой артефакт.</p>
@@ -86,18 +96,21 @@
       <div class="catalog-grid">
         <article class="catalog-card">
           <div class="card-glow"></div>
+          <div class="card-frame"></div>
           <h3>120MM FAN GRILLS</h3>
           <p>Металлизированные решётки для кастомных ПК, вдохновлённые готикой.</p>
           <a href="#fan-grills" class="card-link">Перейти</a>
         </article>
         <article class="catalog-card">
           <div class="card-glow"></div>
+          <div class="card-frame"></div>
           <h3>PENDANTS</h3>
           <p>Подвески и чокеры из стали, подчёркивающие альтернативный стиль.</p>
           <a href="#pendants" class="card-link">Перейти</a>
         </article>
         <article class="catalog-card">
           <div class="card-glow"></div>
+          <div class="card-frame"></div>
           <h3>PHOTO FRAMES</h3>
           <p>Фоторамки-артефакты для сохранения цифровой и аналоговой памяти.</p>
           <a href="#frames" class="card-link">Перейти</a>
@@ -107,6 +120,7 @@
 
     <section class="product-showcase layered" id="product-showcase">
       <div class="section-bg section-bg--mist"></div>
+      <div class="section-bg section-bg--orbit"></div>
       <div class="section-title">
         <h2>Витрина артефактов</h2>
         <p>Атмосферные слои, детали и ощущение глубины.</p>
@@ -120,6 +134,7 @@
 
     <section class="product layered" id="fan-grills">
       <div class="section-bg section-bg--grid"></div>
+      <div class="section-bg section-bg--shards"></div>
       <div class="section-title">
         <h2>120MM FAN GRILLS</h2>
         <p>Кастомные решётки для вентиляторов 120мм с готическим силуэтом.</p>
@@ -151,6 +166,7 @@
 
     <section class="product layered" id="pendants">
       <div class="section-bg section-bg--veil"></div>
+      <div class="section-bg section-bg--orbit"></div>
       <div class="section-title">
         <h2>PENDANTS</h2>
         <p>Подвески и чокеры — артефакты для personal dark aesthetic.</p>
@@ -181,6 +197,7 @@
 
     <section class="product layered" id="frames">
       <div class="section-bg section-bg--mist"></div>
+      <div class="section-bg section-bg--grid"></div>
       <div class="section-title">
         <h2>PHOTO FRAMES</h2>
         <p>Фоторамки-объекты для фиксации памяти, аналоговой или цифровой.</p>
@@ -212,6 +229,7 @@
 
     <section class="info layered" id="faq">
       <div class="section-bg section-bg--runes"></div>
+      <div class="section-bg section-bg--veil"></div>
       <div class="section-title">
         <h2>FAQ</h2>
       </div>
@@ -237,6 +255,7 @@
 
     <section class="info layered" id="delivery">
       <div class="section-bg section-bg--grid"></div>
+      <div class="section-bg section-bg--mist"></div>
       <div class="section-title">
         <h2>Доставка</h2>
         <p>
@@ -262,6 +281,7 @@
 
     <section class="info layered" id="return-policy">
       <div class="section-bg section-bg--veil"></div>
+      <div class="section-bg section-bg--runes"></div>
       <div class="section-title">
         <h2>Политика возврата</h2>
         <p>
@@ -273,6 +293,7 @@
 
     <section class="contacts layered" id="contacts">
       <div class="section-bg section-bg--mist"></div>
+      <div class="section-bg section-bg--shards"></div>
       <div class="section-title">
         <h2>Контакты</h2>
         <p>Свяжитесь с нами, чтобы оформить заказ или обсудить кастом.</p>

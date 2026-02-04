@@ -166,6 +166,56 @@ section {
   opacity: 0.6;
 }
 
+.hero-layer--embers {
+  background-image: radial-gradient(circle at 10% 80%, rgba(190, 200, 230, 0.3), transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(150, 170, 210, 0.25), transparent 55%),
+    radial-gradient(circle at 40% 90%, rgba(120, 140, 180, 0.2), transparent 60%);
+  opacity: 0.5;
+  mix-blend-mode: screen;
+}
+
+.hero-layer--aurora {
+  background-image: linear-gradient(120deg, rgba(120, 140, 200, 0.2), transparent 60%),
+    linear-gradient(300deg, rgba(80, 110, 150, 0.18), transparent 55%);
+  opacity: 0.55;
+  filter: blur(0.5px);
+}
+
+.hero-layer--shards {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1100' height='700'%3E%3Crect width='1100' height='700' fill='transparent'/%3E%3Cpath d='M120 520 L200 420 L260 500 L340 380 L420 520' stroke='%2394a3c2' stroke-width='2' fill='none' opacity='0.6'/%3E%3Cpath d='M640 540 L720 400 L780 520 L860 360 L980 520' stroke='%237b88a6' stroke-width='2' fill='none' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: 0.6;
+  mix-blend-mode: screen;
+}
+
+.hero-layer--foreground {
+  background-image: linear-gradient(180deg, transparent 30%, rgba(6, 7, 12, 0.95) 80%),
+    radial-gradient(circle at 30% 80%, rgba(120, 140, 168, 0.35), transparent 70%);
+  opacity: 0.95;
+}
+
+.hero-orb {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(160, 180, 220, 0.45), transparent 70%);
+  filter: blur(4px);
+  mix-blend-mode: screen;
+  z-index: 2;
+  animation: float 12s ease-in-out infinite;
+}
+
+.hero-orb--left {
+  left: 12%;
+  bottom: 18%;
+}
+
+.hero-orb--right {
+  right: 8%;
+  top: 18%;
+  animation-delay: -4s;
+}
+
 .hero-content {
   max-width: 640px;
   position: relative;
@@ -226,6 +276,38 @@ section {
   }
 }
 
+@keyframes mistFlow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes orbitGlow {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(12px);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .section-title {
   max-width: 640px;
   margin-bottom: 48px;
@@ -257,6 +339,7 @@ section {
 .section-bg--mist {
   background-image: radial-gradient(circle at 70% 30%, rgba(120, 140, 168, 0.25), transparent 60%),
     linear-gradient(180deg, rgba(8, 10, 16, 0.2), rgba(8, 10, 16, 0.8));
+  animation: mistFlow 18s ease-in-out infinite;
 }
 
 .section-bg--grid {
@@ -266,7 +349,21 @@ section {
   opacity: 0.3;
 }
 
+.section-bg--shards {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='600'%3E%3Crect width='900' height='600' fill='transparent'/%3E%3Cpath d='M60 520 L160 430 L220 520 L320 400 L420 520' stroke='%238c9bb6' stroke-width='2' fill='none' opacity='0.5'/%3E%3Cpath d='M520 520 L600 430 L680 520 L760 400 L840 520' stroke='%2374819a' stroke-width='2' fill='none' opacity='0.4'/%3E%3C/svg%3E");
+  opacity: 0.4;
+}
+
+.section-bg--orbit {
+  background-image: radial-gradient(circle at 70% 20%, rgba(120, 140, 180, 0.25), transparent 55%),
+    radial-gradient(circle at 30% 80%, rgba(90, 110, 150, 0.2), transparent 60%);
+  mix-blend-mode: screen;
+  opacity: 0.45;
+  animation: orbitGlow 16s ease-in-out infinite;
+}
+
 .layered .section-title,
+.layered .story-grid,
 .layered .catalog-grid,
 .layered .product-grid,
 .layered .info-grid,
@@ -315,6 +412,22 @@ section {
   border: 1px solid rgba(255, 255, 255, 0.07);
   overflow: hidden;
   min-height: 240px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  isolation: isolate;
+}
+
+.catalog-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 15%, rgba(255, 255, 255, 0.08), transparent 60%);
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.catalog-card > * {
+  position: relative;
+  z-index: 2;
 }
 
 .card-glow {
@@ -327,6 +440,15 @@ section {
 
 .catalog-card:hover .card-glow {
   opacity: 1;
+}
+
+.card-frame {
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(120, 140, 168, 0.2);
+  border-radius: 14px;
+  box-shadow: inset 0 0 25px rgba(15, 20, 30, 0.6);
+  pointer-events: none;
 }
 
 .catalog-card h3 {
@@ -356,6 +478,7 @@ section {
 }
 
 .showcase-image {
+  position: relative;
   height: 260px;
   border-radius: 18px;
   background: linear-gradient(160deg, rgba(15, 18, 28, 0.9), rgba(60, 70, 90, 0.6)),
@@ -368,6 +491,35 @@ section {
   text-transform: uppercase;
   letter-spacing: 2px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+}
+
+.showcase-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  opacity: 0.7;
+}
+
+.showcase-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 30%, rgba(6, 8, 14, 0.85) 90%);
+  opacity: 0.9;
+}
+
+.showcase-image span {
+  position: relative;
+  z-index: 1;
+}
+
+.showcase-image,
+.gallery-item,
+.catalog-card {
+  backdrop-filter: blur(2px);
 }
 
 .product-grid {
@@ -395,6 +547,16 @@ section {
   font-size: 0.7rem;
   color: var(--metal);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(160, 180, 220, 0.2), transparent 60%);
+  opacity: 0.8;
 }
 
 .product-info h3 {
