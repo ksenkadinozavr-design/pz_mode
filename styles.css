@@ -23,6 +23,19 @@ body {
   overflow-x: hidden;
 }
 
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: repeating-radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.03) 0 1px, transparent 1px 6px),
+    repeating-radial-gradient(circle at 70% 60%, rgba(140, 160, 200, 0.04) 0 1px, transparent 1px 7px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Crect width='320' height='320' fill='transparent'/%3E%3Cg opacity='0.15' fill='%23cfd6e6'%3E%3Ccircle cx='12' cy='18' r='0.6'/%3E%3Ccircle cx='44' cy='72' r='0.7'/%3E%3Ccircle cx='90' cy='40' r='0.5'/%3E%3Ccircle cx='140' cy='90' r='0.6'/%3E%3Ccircle cx='210' cy='30' r='0.7'/%3E%3Ccircle cx='260' cy='80' r='0.6'/%3E%3Ccircle cx='300' cy='140' r='0.5'/%3E%3Ccircle cx='40' cy='160' r='0.6'/%3E%3Ccircle cx='120' cy='210' r='0.7'/%3E%3Ccircle cx='200' cy='180' r='0.6'/%3E%3Ccircle cx='280' cy='220' r='0.5'/%3E%3Ccircle cx='60' cy='260' r='0.6'/%3E%3Ccircle cx='160' cy='280' r='0.7'/%3E%3Ccircle cx='240' cy='260' r='0.5'/%3E%3C/g%3E%3C/svg%3E");
+  mix-blend-mode: screen;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 1;
+}
+
 canvas#particles {
   position: fixed;
   inset: 0;
@@ -212,7 +225,8 @@ section {
 
 .hero-layer--foreground {
   background-image: linear-gradient(180deg, transparent 30%, rgba(6, 7, 12, 0.95) 80%),
-    radial-gradient(circle at 30% 80%, rgba(120, 140, 168, 0.35), transparent 70%);
+    radial-gradient(circle at 30% 80%, rgba(120, 140, 168, 0.35), transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='transparent'/%3E%3Cg opacity='0.2' fill='%23b8c3da'%3E%3Ccircle cx='30' cy='40' r='0.8'/%3E%3Ccircle cx='80' cy='90' r='0.6'/%3E%3Ccircle cx='140' cy='60' r='0.7'/%3E%3Ccircle cx='200' cy='120' r='0.8'/%3E%3Ccircle cx='260' cy='80' r='0.6'/%3E%3Ccircle cx='320' cy='140' r='0.7'/%3E%3Ccircle cx='380' cy='100' r='0.6'/%3E%3Ccircle cx='440' cy='160' r='0.7'/%3E%3Ccircle cx='500' cy='120' r='0.6'/%3E%3Ccircle cx='560' cy='180' r='0.7'/%3E%3Ccircle cx='60' cy='220' r='0.6'/%3E%3Ccircle cx='120' cy='260' r='0.7'/%3E%3Ccircle cx='180' cy='230' r='0.6'/%3E%3Ccircle cx='240' cy='280' r='0.7'/%3E%3Ccircle cx='300' cy='250' r='0.6'/%3E%3Ccircle cx='360' cy='300' r='0.7'/%3E%3Ccircle cx='420' cy='260' r='0.6'/%3E%3Ccircle cx='480' cy='320' r='0.7'/%3E%3Ccircle cx='540' cy='280' r='0.6'/%3E%3C/g%3E%3C/svg%3E");
   opacity: 0.95;
 }
 
@@ -341,6 +355,18 @@ section {
   overflow: hidden;
 }
 
+.layered::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.03) 0 1px, transparent 1px 5px),
+    repeating-linear-gradient(135deg, rgba(120, 140, 168, 0.03), rgba(120, 140, 168, 0.03) 1px, transparent 1px, transparent 18px);
+  opacity: 0.25;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 1;
+}
+
 .section-bg {
   position: absolute;
   inset: 0;
@@ -351,7 +377,8 @@ section {
 
 .section-bg--veil {
   background-image: radial-gradient(circle at 20% 20%, rgba(120, 140, 168, 0.3), transparent 60%),
-    linear-gradient(140deg, rgba(255, 255, 255, 0.05), transparent 70%);
+    linear-gradient(140deg, rgba(255, 255, 255, 0.05), transparent 70%),
+    repeating-linear-gradient(90deg, rgba(120, 140, 168, 0.05), rgba(120, 140, 168, 0.05) 1px, transparent 1px, transparent 10px);
 }
 
 .section-bg--runes {
