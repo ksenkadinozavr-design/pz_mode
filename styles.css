@@ -129,23 +129,41 @@ section {
   transform: translateZ(0);
 }
 
-.hero-layer--1 {
-  background-image: radial-gradient(circle at 30% 30%, rgba(120, 140, 168, 0.2), transparent 60%),
-    linear-gradient(130deg, rgba(255, 255, 255, 0.06), transparent 55%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='800' height='600' fill='%230b0c10'/%3E%3Cpath d='M0 400 Q200 350 400 420 T800 380' stroke='%234b556b' stroke-width='2' fill='none' opacity='0.4'/%3E%3Cpath d='M0 500 Q250 460 500 520 T800 480' stroke='%236d7a92' stroke-width='2' fill='none' opacity='0.3'/%3E%3C/svg%3E");
+.hero-layer--stars {
+  background-image: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.2), transparent 40%),
+    radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.15), transparent 35%),
+    radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.1), transparent 45%);
+  opacity: 0.4;
+}
+
+.hero-layer--nebula {
+  background-image: radial-gradient(circle at 25% 35%, rgba(120, 140, 168, 0.35), transparent 55%),
+    radial-gradient(circle at 70% 20%, rgba(90, 110, 140, 0.3), transparent 60%),
+    linear-gradient(140deg, rgba(255, 255, 255, 0.05), transparent 60%);
   filter: blur(1px);
 }
 
-.hero-layer--2 {
-  background-image: radial-gradient(circle at 60% 40%, rgba(190, 200, 220, 0.15), transparent 55%),
-    linear-gradient(180deg, rgba(10, 10, 20, 0.2), rgba(0, 0, 0, 0.9));
+.hero-layer--mist {
+  background-image: linear-gradient(180deg, rgba(9, 10, 15, 0.2), rgba(5, 6, 10, 0.85)),
+    radial-gradient(circle at 60% 60%, rgba(140, 160, 190, 0.25), transparent 55%);
   mix-blend-mode: screen;
+  opacity: 0.7;
 }
 
-.hero-layer--3 {
-  background-image: linear-gradient(120deg, rgba(255, 255, 255, 0.08), transparent 60%),
-    radial-gradient(circle at 80% 20%, rgba(120, 140, 168, 0.3), transparent 40%);
-  opacity: 0.7;
+.hero-layer--cracks {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='600'%3E%3Crect width='900' height='600' fill='%230b0c10'/%3E%3Cpath d='M40 420 L180 310 L260 360 L380 260 L520 330 L660 250 L820 340' stroke='%23515a70' stroke-width='2' fill='none' opacity='0.45'/%3E%3Cpath d='M0 520 Q200 470 360 510 T740 500' stroke='%23627290' stroke-width='2' fill='none' opacity='0.35'/%3E%3C/svg%3E");
+  opacity: 0.5;
+}
+
+.hero-layer--horizon {
+  background-image: linear-gradient(180deg, transparent 40%, rgba(15, 18, 28, 0.95) 70%),
+    radial-gradient(circle at 50% 70%, rgba(120, 140, 168, 0.35), transparent 65%);
+  opacity: 0.9;
+}
+
+.hero-layer--spikes {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600'%3E%3Crect width='1200' height='600' fill='transparent'/%3E%3Cpath d='M0 520 L80 420 L160 510 L240 380 L360 520 L460 360 L620 540 L760 330 L920 560 L1040 400 L1200 520' stroke='%238190aa' stroke-width='3' fill='none' opacity='0.6'/%3E%3C/svg%3E");
+  opacity: 0.6;
 }
 
 .hero-content {
@@ -211,6 +229,51 @@ section {
 .section-title {
   max-width: 640px;
   margin-bottom: 48px;
+}
+
+.layered {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.45;
+  pointer-events: none;
+  transform: translateZ(0);
+}
+
+.section-bg--veil {
+  background-image: radial-gradient(circle at 20% 20%, rgba(120, 140, 168, 0.3), transparent 60%),
+    linear-gradient(140deg, rgba(255, 255, 255, 0.05), transparent 70%);
+}
+
+.section-bg--runes {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='600'%3E%3Crect width='900' height='600' fill='transparent'/%3E%3Cpath d='M60 120 L140 80 L200 140' stroke='%235d6a85' stroke-width='1.5' fill='none' opacity='0.5'/%3E%3Cpath d='M260 200 L320 160 L380 220' stroke='%236d7a95' stroke-width='1.5' fill='none' opacity='0.4'/%3E%3Cpath d='M520 100 L600 60 L660 120' stroke='%235e6a80' stroke-width='1.5' fill='none' opacity='0.45'/%3E%3C/svg%3E");
+  mix-blend-mode: screen;
+}
+
+.section-bg--mist {
+  background-image: radial-gradient(circle at 70% 30%, rgba(120, 140, 168, 0.25), transparent 60%),
+    linear-gradient(180deg, rgba(8, 10, 16, 0.2), rgba(8, 10, 16, 0.8));
+}
+
+.section-bg--grid {
+  background-image: linear-gradient(rgba(120, 140, 168, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 140, 168, 0.15) 1px, transparent 1px);
+  background-size: 120px 120px;
+  opacity: 0.3;
+}
+
+.layered .section-title,
+.layered .catalog-grid,
+.layered .product-grid,
+.layered .info-grid,
+.layered .contact-grid,
+.layered .order-form {
+  position: relative;
+  z-index: 2;
 }
 
 .section-title h2 {
