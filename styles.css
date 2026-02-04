@@ -36,6 +36,17 @@ body::after {
   z-index: 1;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: repeating-linear-gradient(120deg, rgba(160, 180, 220, 0.04), rgba(160, 180, 220, 0.04) 2px, transparent 2px, transparent 18px),
+    repeating-linear-gradient(-120deg, rgba(90, 110, 150, 0.03), rgba(90, 110, 150, 0.03) 2px, transparent 2px, transparent 20px);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 1;
+}
+
 canvas#particles {
   position: fixed;
   inset: 0;
@@ -154,6 +165,12 @@ section {
   opacity: 0.35;
 }
 
+.hero-layer--spikes {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600'%3E%3Crect width='1200' height='600' fill='transparent'/%3E%3Cpath d='M0 520 L80 420 L160 510 L240 380 L360 520 L460 360 L620 540 L760 330 L920 560 L1040 400 L1200 520' stroke='%238190aa' stroke-width='3' fill='none' opacity='0.6'/%3E%3C/svg%3E"),
+    repeating-linear-gradient(140deg, rgba(180, 200, 230, 0.08), rgba(180, 200, 230, 0.08) 1px, transparent 1px, transparent 10px);
+  opacity: 0.7;
+}
+
 .hero-layer {
   position: absolute;
   inset: 0;
@@ -195,11 +212,6 @@ section {
   background-image: linear-gradient(180deg, transparent 40%, rgba(15, 18, 28, 0.95) 70%),
     radial-gradient(circle at 50% 70%, rgba(120, 140, 168, 0.35), transparent 65%);
   opacity: 0.9;
-}
-
-.hero-layer--spikes {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600'%3E%3Crect width='1200' height='600' fill='transparent'/%3E%3Cpath d='M0 520 L80 420 L160 510 L240 380 L360 520 L460 360 L620 540 L760 330 L920 560 L1040 400 L1200 520' stroke='%238190aa' stroke-width='3' fill='none' opacity='0.6'/%3E%3C/svg%3E");
-  opacity: 0.6;
 }
 
 .hero-layer--embers {
@@ -367,6 +379,18 @@ section {
   z-index: 1;
 }
 
+.layered::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(90deg, rgba(180, 200, 230, 0.05), rgba(180, 200, 230, 0.05) 2px, transparent 2px, transparent 12px),
+    repeating-linear-gradient(180deg, rgba(80, 100, 140, 0.05), rgba(80, 100, 140, 0.05) 2px, transparent 2px, transparent 12px);
+  opacity: 0.2;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 1;
+}
+
 .section-bg {
   position: absolute;
   inset: 0;
@@ -467,15 +491,6 @@ section {
   isolation: isolate;
 }
 
-.catalog-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 80% 15%, rgba(255, 255, 255, 0.08), transparent 60%);
-  opacity: 0.6;
-  z-index: 1;
-}
-
 .catalog-card::after {
   content: "";
   position: absolute;
@@ -483,6 +498,16 @@ section {
   background-image: linear-gradient(120deg, rgba(255, 255, 255, 0.05), transparent 65%),
     repeating-linear-gradient(90deg, rgba(120, 140, 168, 0.08), rgba(120, 140, 168, 0.08) 1px, transparent 1px, transparent 12px);
   opacity: 0.35;
+  z-index: 1;
+}
+
+.catalog-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 80% 15%, rgba(255, 255, 255, 0.08), transparent 60%),
+    repeating-linear-gradient(135deg, rgba(160, 180, 220, 0.08), rgba(160, 180, 220, 0.08) 2px, transparent 2px, transparent 14px);
+  opacity: 0.6;
   z-index: 1;
 }
 
@@ -618,6 +643,14 @@ section {
   inset: 0;
   background: radial-gradient(circle at 30% 20%, rgba(160, 180, 220, 0.2), transparent 60%);
   opacity: 0.8;
+}
+
+.gallery-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(135deg, rgba(120, 140, 168, 0.08), rgba(120, 140, 168, 0.08) 1px, transparent 1px, transparent 10px);
+  opacity: 0.5;
 }
 
 .product-info h3 {
